@@ -1,19 +1,29 @@
-//第一种，就是截取最后一项在最前插入
-// var rotate = function(nums, k) {
-//     for(let i=0; i < k; i++){
-//         let temp = nums.splice(-1, 1)[0];
-//         nums.splice(0,0, temp)
-//     }
-//     // return nums;
+// var merge = function(nums1, m, nums2, n) {
+//     nums1.splice(m);
+//     nums2.splice(n)
+    
+//     nums2.forEach(element => {
+//         nums1.push(element);
+//     });
+//     nums1.sort((a,b)=>{return (a - b)});
 // };
-//第二种
-var rotate = function(nums, k) {
-    for(let i=0; i < k; i++){
-        let item = nums.pop();
-        nums.unshift(item);
+var merge = function(nums1, m, nums2, n) {
+    while(n > 0) {
+        if (nums1[m-1] >= nums2[n-1]) {
+            nums1[n+m-1] = nums1[--m]
+        } else {
+            nums1[n+m-1] = nums2[--n]
+        }
     }
 };
-var nums = [1,2,3,4,5,6,7], k = 3;
-rotate(nums, k);
-console.log(nums)
+
+
+var nums1 = [1,2,3,0,0,0], m = 3
+    nums2 = [2,5,6],       n = 3;
+
+merge(nums1, m, nums2, n);
+console.log(nums1)
+
+
+
 
