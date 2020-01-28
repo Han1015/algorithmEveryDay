@@ -9,10 +9,10 @@ for i in "$@"; do
     second=`echo $string|cut -c2-`
     name="$name$first$second"  
 done
-
 mkdir $name
 touch $name/code.js
 touch $name/idea.md
+echo $name
 # string="abcd"
 # first=`echo $string|cut -c1|tr [a-z] [A-Z]`
 # second=`echo $string|cut -c2-`
