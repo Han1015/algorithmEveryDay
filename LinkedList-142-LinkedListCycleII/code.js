@@ -12,7 +12,7 @@ var detectCycle = function(head) {
     if(!fast || !fast.next){
         return null;
     }
-    
+
     fast = head;
     while(slow != fast){
         fast=fast.next;
